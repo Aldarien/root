@@ -1,0 +1,17 @@
+{
+	"name" : "aldarien/root",
+	"description" : "Find the root path for your proyect",
+	"authors" : [{
+			"name" : "Aldarien"
+		}
+	],
+	"require-dev" : {
+		"phpunit/phpunit" : "~6",
+		"kint-php/kint" : "~2"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"Proyect\\Root\\" : "src"
+		}
+	}
+}
