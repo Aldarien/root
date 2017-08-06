@@ -13,7 +13,7 @@ class Root
 	 * @param string $proyect_name
 	 * @return string
 	 */
-	function static root(string $proyect_name)
+	public static function root(string $proyect_name)
 	{
 		$dir = realpath(__DIR__);
 		$ini = strpos($dir, $proyect_name) + strlen($proyect_name);
