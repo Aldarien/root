@@ -5,6 +5,7 @@
 			"name" : "Aldarien"
 		}
 	],
+	"license": "MIT",
 	"require-dev" : {
 		"phpunit/phpunit" : "~6",
 		"kint-php/kint" : "~2"
