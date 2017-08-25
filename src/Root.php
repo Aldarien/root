@@ -13,10 +13,14 @@ class Root
 	 * @param string $proyect_name
 	 * @return string
 	 */
-	function root(string $proyect_name)
+	public static function root(string $proyect_name = '')
 	{
 		$dir = realpath(__DIR__);
-		$ini = strpos($dir, $proyect_name) + strlen($proyect_name);
+		if ($proyect_name == '') {
+			return self::findComposerFile($dir);
+		} else {
+			$ini = strpos($dir, $proyect_name) + strlen($proyect_name);
+		}
 		$path = substr($dir, $ini);
 		$cnt = substr_count($path, DIRECTORY_SEPARATOR);
 		$root = DIRECTORY_SEPARATOR;
@@ -25,6 +29,20 @@ class Root
 		}
 		
 		return realpath($dir . $root);
+	}
+	protected static function findComposerFile($dir)
+	{
+		if (file_exists($dir . '/composer.json')) {
+			return $dir;
+		}
+		
+		$root = realpath('/');
+		if (realpath($dir) == $root) {
+			return null;
+		}
+		
+		$dir = dirname($dir);
+		return self::findComposerFile($dir);
 	}
 }
 ?>

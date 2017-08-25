@@ -12,6 +12,9 @@
 	"autoload" : {
 		"psr-4" : {
 			"Proyect\\Root\\" : "src"
-		}
+		},
+		"files": [
+			"app/Helper/functions.php"
+		]
 	}
 }
