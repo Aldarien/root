@@ -32,7 +32,7 @@ class Root
 	}
 	protected static function findComposerFile($dir)
 	{
-		if (file_exists($dir . '/composer.json')) {
+		if (file_exists($dir . '/vendor/')) {
 			return $dir;
 		}
 		
