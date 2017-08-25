@@ -3,7 +3,7 @@ get root directory path for your project
 
 ## Usage
 
-add `Root::root('project')` where you need the root directory of your proyect.
+add `Root::root('project')` or `root('project')` or `Root::root()` or `root()` where you need the root directory of your proyect.
 
 ## Example
 
